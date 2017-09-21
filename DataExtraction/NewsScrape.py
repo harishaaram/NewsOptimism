@@ -14,6 +14,10 @@ import requests
 import newspaper
 from newspaper import Article
 
+import time
+## ddmmyyyy format
+print (time.strftime("%d%m%Y"))
+
 # url = "http://www.cnn.com/"
 # url = "http://www.reuters.com/"
 # url = "http://www.foxnews.com/"
