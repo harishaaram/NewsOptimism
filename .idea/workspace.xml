@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e8293e8-8d3f-44c9-8fc6-7d96c0b12c09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataExtraction/NewsScrape.py" afterPath="$PROJECT_DIR$/DataExtraction/NewsScrape.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataExtraction/newspaperCNN.txt" afterPath="$PROJECT_DIR$/DataExtraction/newspaperCNN.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataExtraction/newspaperReuters.txt" afterPath="$PROJECT_DIR$/DataExtraction/newspaperReuters.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/NewsOptimism$NewsScrape.coverage" NAME="NewsScrape Coverage Results" MODIFIED="1506005529506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataExtraction" />
+    <SUITE FILE_PATH="coverage/NewsOptimism$NewsScrape.coverage" NAME="NewsScrape Coverage Results" MODIFIED="1506009529686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataExtraction" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -25,8 +25,8 @@
       <file leaf-file-name="NewsScrape.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DataExtraction/NewsScrape.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="-402">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#116#132#0" expanded="true" />
               </folding>
@@ -524,8 +524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DataExtraction/NewsScrape.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="-402">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#116#132#0" expanded="true" />
           </folding>

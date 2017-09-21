@@ -19,9 +19,9 @@ import time
 print (time.strftime("%d%m%Y"))
 
 # url = "http://www.cnn.com/"
-# url = "http://www.reuters.com/"
+url = "http://www.nytimes.com/"
 # url = "http://www.foxnews.com/"
-url = "http://www.reuters.com/"
+# url = "http://www.reuters.com/"
 
 a = Article(url)
 
@@ -33,7 +33,7 @@ article_text_list = []
 article_summary_list = []
 article_nlp_list = []
 
-f = open("newspaperReuters.txt", "w")
+f = open("newspaperNYT.txt", "w")
 i = -1
 for eachArticle in cnn_paper.articles:#url links
     i = i +1
@@ -65,10 +65,13 @@ for eachArticle in cnn_paper.articles:#url links
     print(article.summary)
 
 
-    f.write("--------------------------------------------------------------")
+    f.write("\n"+ "--------------------------------------------------------------" + "\n")
     f.write(eachArticle.url)
     # f.write(article.keywords)
+
+    f.write("\n"+"----SUMMARY ARTICLE---" + "\n")
     f.write(article.summary)
+    f.write("\n"+"----TEXT INSIDE ARTICLE---" + "\n")
     f.write(article.text)
 
 f.close()
