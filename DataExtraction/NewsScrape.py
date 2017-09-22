@@ -12,30 +12,20 @@ import requests
 # pprint.pprint(lassie.fetch(url))
 
 import newspaper
-from newspaper import Article
+import sys
 import os
 import time
 
-# t = os.path.join('/home/harish/PycharmProjects/NewsOptimism/Backup', time.strftime("%d%m%Y"))
-# os.makedirs(t)
-# os.path.exists('/home/harish/PycharmProjects/NewsOptimism/Backup')
 
-## ddmmyyyy format
-print (time.strftime("%d%m%Y"))
 
-# def create_filename(url):
-#     media_name = url.split('.')[1]
-#     t = os.path.join('/home/harish/PycharmProjects/NewsOptimism/Backup', time.strftime("%d%m%Y"))
-#     bolean = os.path.exists(t)
-#     if bolean == False:
-#         os.makedirs(t)
-#         return
 
 def newsscraping(url, media_name):
     import os
     os.getcwd()
 
     os.chdir('/home/harish/PycharmProjects/NewsOptimism/')
+
+    ## ddmmyyyy format
     filename = time.strftime("%d%m%Y")
 
     backupfile= open('Backup/'+ media_name + '/' + filename, 'w')
@@ -43,39 +33,27 @@ def newsscraping(url, media_name):
 
     i = -1
 
-    cnn_paper = newspaper.build(url)  # gets the source(an abstraction of online news) newspaper object
-    for eachArticle in cnn_paper.articles:#url links
+    news_content = newspaper.build(url)  # gets the source(an abstraction of online news) newspaper object
+    for eachArticle in news_content.articles:#url links
         i = i +1
-        print(i)
-        print("--------------------------------------------------------------")
-        print(eachArticle.url)
-        article = cnn_paper.articles[i]
-        print("--------------------------------------------------------------")
-        print(article)
+
+        article = news_content.articles[i]
 
         article.download()#now download and parse each articles
         article.parse()
 
-
-        print("----TEXT INSIDE ARTICLE---")
-        print(article.text)
-
-
-        print("----NLP KEYWORDS---")
         article.nlp()
-        print(article.keywords)
-
-
-        print("----SUMMARY ARTICLE---")
-        print(article.summary)
 
 
         backupfile.write("\n"+ "--------------------------------------------------------------" + "\n")
         backupfile.write(str(article.keywords))
 
-        backupfile.write("\n"+"----SUMMARY ARTICLE---" + "\n")
+
         datasetfile.write("\n" + "----SUMMARY ARTICLE-> No. " + str(i) + "\n")
         datasetfile.write(article.summary) #only summary of the article is written in the dataset directory
+
+
+        backupfile.write("\n"+"----SUMMARY ARTICLE---" + "\n")
         backupfile.write(article.summary)
         backupfile.write("\n"+"----TEXT INSIDE ARTICLE---" + "\n")
         backupfile.write(article.text)
@@ -90,10 +68,13 @@ def main():
     
     url_list =[ "http://www.nytimes.com/", "http://www.foxnews.com/", "http://www.reuters.com/", "http://www.cnn.com/", "http://www.huffingtonpost.com/" ]
     # u = ["http://www.ndtv.com/"]
-    for url in url_list:
-        media_name = url.split('.')[1]#makes subdir ie backup/foxnews
-        
-        newsscraping(url, media_name)
+    try:
+        for url in url_list:
+            media_name = url.split('.')[1]#makes subdir ie backup/foxnews
+            newsscraping(url, media_name)
+    except:
+        pass
+
 
 
 if __name__ == '__main__':
