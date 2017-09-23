@@ -17,8 +17,6 @@ import os
 import time
 
 
-
-
 def newsscraping(url, media_name):
     import os
     os.getcwd()
@@ -36,27 +34,30 @@ def newsscraping(url, media_name):
     news_content = newspaper.build(url)  # gets the source(an abstraction of online news) newspaper object
     for eachArticle in news_content.articles:#url links
         i = i +1
+        try :
+            article = news_content.articles[i]
 
-        article = news_content.articles[i]
+            article.download()#now download and parse each articles
+            article.parse()
 
-        article.download()#now download and parse each articles
-        article.parse()
-
-        article.nlp()
-
-
-        backupfile.write("\n"+ "--------------------------------------------------------------" + "\n")
-        backupfile.write(str(article.keywords))
+            article.nlp()
 
 
-        datasetfile.write("\n" + "----SUMMARY ARTICLE-> No. " + str(i) + "\n")
-        datasetfile.write(article.summary) #only summary of the article is written in the dataset directory
+            backupfile.write("\n"+ "--------------------------------------------------------------" + "\n")
+            backupfile.write(str(article.keywords))
 
 
-        backupfile.write("\n"+"----SUMMARY ARTICLE---" + "\n")
-        backupfile.write(article.summary)
-        backupfile.write("\n"+"----TEXT INSIDE ARTICLE---" + "\n")
-        backupfile.write(article.text)
+            datasetfile.write("\n" + "----SUMMARY ARTICLE-> No. " + str(i) + "\n")
+            datasetfile.write(article.summary) #only summary of the article is written in the dataset directory
+
+
+            backupfile.write("\n"+"----SUMMARY ARTICLE---" + "\n")
+            backupfile.write(article.summary)
+            backupfile.write("\n"+"----TEXT INSIDE ARTICLE---" + "\n")
+            backupfile.write(article.text)
+            time.sleep(2)
+        except:
+            pass
 
     backupfile.close()
     datasetfile.close()
