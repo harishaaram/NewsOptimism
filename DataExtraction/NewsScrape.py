@@ -1,17 +1,10 @@
 # coding: utf-8
 
-#Scrapes the front web page of given website and saves into a text document.
+#Scrapes the News article of given website and saves into a text document.
 
-#Check Google Notes:
-import html2text
-import requests
-#Make the proxy settings, if your access is through a proxy server
-# import lassie
-# import pprint
-# url = "https://www.reuters.com/"
-# pprint.pprint(lassie.fetch(url))
 
 import newspaper
+from newspaper import Article
 import sys
 import os
 import time
@@ -24,14 +17,14 @@ def newsscraping(url, media_name):
     os.chdir('/home/harish/PycharmProjects/NewsOptimism/')
 
     ## ddmmyyyy format
-    filename = time.strftime("%d%m%Y")
-
+    # filename = time.strftime("%d%m%Y")
+    filename = "check"
     backupfile= open('Backup/'+ media_name + '/' + filename, 'w')
     datasetfile = open('dataset/'+ media_name + '/'  + filename, 'w')
 
     i = -1
 
-    news_content = newspaper.build(url)  # gets the source(an abstraction of online news) newspaper object
+    news_content = newspaper.build(url,memoize_articles=False, language='en')  # gets the source(an abstraction of online news) newspaper object
     for eachArticle in news_content.articles:#url links
         i = i +1
         try :
@@ -46,8 +39,9 @@ def newsscraping(url, media_name):
             backupfile.write("\n"+ "--------------------------------------------------------------" + "\n")
             backupfile.write(str(article.keywords))
 
-
-            datasetfile.write("\n" + "----SUMMARY ARTICLE-> No. " + str(i) + "\n")
+            datasetfile.write("\n" + "----Title -> No. " + str(i) + "\n")
+            datasetfile.write(article.title)
+            datasetfile.write("\n" + "----SUMMARY ARTICLE-> No. " + "\n")
             datasetfile.write(article.summary) #only summary of the article is written in the dataset directory
 
 
@@ -55,7 +49,7 @@ def newsscraping(url, media_name):
             backupfile.write(article.summary)
             backupfile.write("\n"+"----TEXT INSIDE ARTICLE---" + "\n")
             backupfile.write(article.text)
-            time.sleep(2)
+            time.sleep(1)
         except:
             pass
 
@@ -67,7 +61,7 @@ def newsscraping(url, media_name):
 def main():
     os.chdir('/home/harish/PycharmProjects/NewsOptimism')  # change working dir
     
-    url_list =[ "http://www.nytimes.com/", "http://www.foxnews.com/", "http://www.reuters.com/", "http://www.cnn.com/", "http://www.huffingtonpost.com/" ]
+    url_list =["http://www.nytimes.com/", "http://www.foxnews.com/", "http://www.reuters.com/", "http://www.cnn.com/", "http://www.huffingtonpost.com/" ]
     # u = ["http://www.ndtv.com/"]
     try:
         for url in url_list:
@@ -77,8 +71,8 @@ def main():
         pass
 
 
-
 if __name__ == '__main__':
     main()
+
 
 

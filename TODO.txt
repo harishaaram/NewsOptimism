@@ -1,0 +1,29 @@
+---ONLY ENGLISH CHARACTERS
+--- CRON JOB
+---## Definition of Optimism(here):
+---
+## Phases:
+    1. Data Extraction
+    2. Data analysis
+    3. Conclusion
+
+#Detailed Description
+Data Extraction:
+![Scraped from CNN](/home/harish/PycharmProjects/NewsOptimism/pictures/how_dataset_looks_cnn.png)
+
+
+# Requirements
+    1. Python 3
+    2. R
+
+## Package:
+    1. nltk
+    2. newspaper3k
+
+
+
+Need Help! Here are some links:
+- [Github link to newspaper package](https://github.com/codelucas/newspaper)
+- [Documentation to extract articles](https://newspaper.readthedocs.io/en/latest/)
+-
+
