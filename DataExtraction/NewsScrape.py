@@ -17,8 +17,8 @@ def newsscraping(url, media_name):
     os.chdir('/home/harish/PycharmProjects/NewsOptimism/')
 
     ## ddmmyyyy format
-    # filename = time.strftime("%d%m%Y")
-    filename = "check"
+    filename = time.strftime("%d%m%Y")
+    # filename = "check"
     backupfile= open('Backup/'+ media_name + '/' + filename, 'w')
     datasetfile = open('dataset/'+ media_name + '/'  + filename, 'w')
 
