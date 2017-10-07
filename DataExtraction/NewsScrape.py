@@ -4,7 +4,7 @@
 
 
 import newspaper
-from newspaper import Article
+from newspaper import Article, news_pool
 import sys
 import os
 import time
@@ -18,13 +18,16 @@ def newsscraping(url, media_name):
 
     ## ddmmyyyy format
     filename = time.strftime("%d%m%Y")
-    # filename = "check"
+    #filename = 'chck3'
     backupfile= open('Backup/'+ media_name + '/' + filename, 'w')
     datasetfile = open('dataset/'+ media_name + '/'  + filename, 'w')
 
     i = -1
 
-    news_content = newspaper.build(url,memoize_articles=False, language='en')  # gets the source(an abstraction of online news) newspaper object
+    news_content = newspaper.build(url,memoize_articles=False, language='en', fetch_images = False, number_threads = 1)# gets the source(an abstraction of online news) newspaper object
+    papers = [news_content]
+    print(news_content.size())
+    news_pool.set(papers, threads_per_source=1)
     for eachArticle in news_content.articles:#url links
         i = i +1
         try :
@@ -37,19 +40,24 @@ def newsscraping(url, media_name):
 
 
             backupfile.write("\n"+ "--------------------------------------------------------------" + "\n")
-            backupfile.write(str(article.keywords))
 
             datasetfile.write("\n" + "----Title -> No. " + str(i) + "\n")
             datasetfile.write(article.title)
-            datasetfile.write("\n" + "----SUMMARY ARTICLE-> No. " + "\n")
-            datasetfile.write(article.summary) #only summary of the article is written in the dataset directory
 
+            # print(article.title)
+            datasetfile.write("\n" + "----URL-> No. "+ str(i) + "\n")
+            datasetfile.write(eachArticle.url) #only summary of the article is written in the dataset directory
 
-            backupfile.write("\n"+"----SUMMARY ARTICLE---" + "\n")
+            backupfile.write("\n" + "----Title -> No. " + str(i) + "\n")
+            backupfile.write(article.title)
+            backupfile.write("\n" + "----Keywords -> No. " + str(i) + "\n")
+            backupfile.write(str(article.keywords))
+            backupfile.write("\n"+"----SUMMARY ARTICLE---" + str(i)+ "\n")
+            # backupfile.write(article.text)
             backupfile.write(article.summary)
-            backupfile.write("\n"+"----TEXT INSIDE ARTICLE---" + "\n")
+            backupfile.write("\n"+"----TEXT INSIDE ARTICLE---"+ str(i) + "\n")
             backupfile.write(article.text)
-            time.sleep(1)
+            time.sleep(0.1)
         except:
             pass
 
@@ -61,8 +69,9 @@ def newsscraping(url, media_name):
 def main():
     os.chdir('/home/harish/PycharmProjects/NewsOptimism')  # change working dir
     
-    url_list =["http://www.nytimes.com/", "http://www.foxnews.com/", "http://www.reuters.com/", "http://www.cnn.com/", "http://www.huffingtonpost.com/" ]
-    # u = ["http://www.ndtv.com/"]
+    url_list =["https://www.nytimes.com/", "https://www.foxnews.com/", "https://www.reuters.com/", "https://www.cnn.com/", "https://www.huffingtonpost.com/" ]
+    # url_list = ["https://www.cnn.com/"]
+    # url_list = ["http://www.bbc.com/"]
     try:
         for url in url_list:
             media_name = url.split('.')[1]#makes subdir ie backup/foxnews
