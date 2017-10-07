@@ -29,8 +29,8 @@ def newsscraping(url, media_name):
     # news_pool.set(papers, threads_per_source=1)
     list_dict = [] # contains a list of dictionary with title, summary, text, keywords as keys
     for eachArticle in news_content.articles:#url links
-        # i = i +1
-        # if i is 4:
+        i = i +1#ith article link
+        # if i is 30:
         #     break
         try :
             article = news_content.articles[i]
@@ -86,8 +86,9 @@ def save_direct_to_csv(data, media_name):
     # columns1 = ['TITLE','URL']
     # headers = ['KEYWORDS','SUMMARY','TEXT','TITLE','URL']
     df = pd.DataFrame(data)
-    df = df.dropna(how='any')
-    df = df.drop_duplicates()
+    # df = df.dropna(axis=0, how='any')
+    df = df.dropna()
+    # df = df.drop_duplicates()
 
     import io
     buf = io.StringIO()
@@ -102,7 +103,7 @@ def main():
 
     # url_list =["https://www.nytimes.com/", "https://www.foxnews.com/", "https://www.reuters.com/", "https://www.cnn.com/", "https://www.huffingtonpost.com/" ]
     # url_list = ["https://www.bbc.com/"]
-    url_list = ["https://www.ndtv.com/"]
+    url_list = ["https://www.cnbc.com/"]
     try:
         for url in url_list:
             media_name = url.split('.')[1]#makes subdir ie backup/foxnews
