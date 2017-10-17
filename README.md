@@ -50,8 +50,8 @@ These are the famous news websites considered based on the unique visitor count 
 
 Data is collected as Text Document from the datasources as mentioned above. Have a look at the text file of the articles
 in the reuters.com front page.
-![Reuters_10/17/2017](pictures/sample/reutersTextSamplefile.png)
+![Reuters_10/17/2017](sample/reutersTextSamplefile.png)
 
 It is then converted to a structured CSV format.
 [Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
-[Download original csv file](pictures/sample/reuters.csv)
+[Download original csv file](sample/reuters.csv)
