@@ -1,5 +1,5 @@
 # NewsOptimism
-Comparative Analysis of various news media and quantify its postive impact.
+Comparative Analysis of various news media and quantify its projection of optimistic words.
 
 # Problem
 All around the world both good and bad happens, but we get to know only what we are exposed to. That's the responsibility of media. This App answers **How much** the each news media is providing the optimistic news to the society?
