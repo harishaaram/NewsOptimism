@@ -93,7 +93,7 @@ def save_direct_to_csv(data, media_name):
     import io
     buf = io.StringIO()
     df.to_csv(buf, index=False)  # convert DataFrame to csv
-    print(buf.getvalue())
+    # print(buf.getvalue())
     filename = str(media_name)+'.csv'
     df.to_csv(filename)
     # print(list_dict)
@@ -101,9 +101,9 @@ def save_direct_to_csv(data, media_name):
 def main():
     os.chdir('/home/harish/PycharmProjects/NewsOptimism')  # change working dir
 
-    # url_list =["https://www.nytimes.com/", "https://www.foxnews.com/", "https://www.reuters.com/", "https://www.cnn.com/", "https://www.huffingtonpost.com/" ]
+    url_list =["https://www.nytimes.com/", "https://www.foxnews.com/", "https://www.reuters.com/", "https://www.cnn.com/", "https://www.huffingtonpost.com/" ]
     # url_list = ["https://www.bbc.com/"]
-    url_list = ["https://www.cnbc.com/"]
+    # url_list = ["https://www.cnbc.com/"]
     try:
         for url in url_list:
             media_name = url.split('.')[1]#makes subdir ie backup/foxnews
