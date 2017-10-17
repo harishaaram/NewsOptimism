@@ -35,12 +35,23 @@ These are the famous news websites considered based on the unique visitor count 
 2. Data is extracted from the FRONT page of the above data sources.
 3. The article title and the summary are extracted.
 4. Data has been scrapped from the resources at the **same** time(since it gets updated regularly).
+5. Our assumption is there is no bias between choosing articles.
 
 ## The Approach
 1. Collect news headlines and summary from all our datasets.
 2. Convert the text document into Term Documen Matrix
 3. Preprocess the data.
 4. Tf-idf method is applied to find the importance of word.
-5. Sentiment analysis to show of text how much positive or negative for eadh day.
+5. Sentiment analysis to show of text how much positive or negative for each day.
 
+# Progress:
 
+## 1) Data Extraction Phase:
+
+Data is collected as Text Document from the datasources as mentioned above. Have a look at the text file of the articles
+in the reuters.com front page.
+![Reuters_10/17/2017](pictures/sample/reutersTextSamplefile.png)
+
+It is then converted to a structured CSV format.
+[Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
+[Download original csv file](pictures/sample/reuters.csv)
