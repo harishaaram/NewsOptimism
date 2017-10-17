@@ -53,5 +53,7 @@ in the reuters.com front page.
 ![Reuters_10/17/2017](sample/reutersTextSamplefile.png)
 
 It is then converted to a structured CSV format.
-[Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
+## [Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
+
+
 [Download original csv file](sample/reuters.csv)
