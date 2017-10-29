@@ -1,5 +1,5 @@
 # NewsOptimism
-Comparative Analysis of various news media and quantify its projection of optimistic words.
+Comparative Analysis of various news media articles by quantifying how much of words are positive in the article.
 
 # Problem
 All around the world both good and bad happens, but we get to know only what we are exposed to. That's the responsibility of media. This App answers **How much** the each news media is providing the optimistic news to the society?
@@ -7,7 +7,7 @@ All around the world both good and bad happens, but we get to know only what we 
 There is a famous concept called [**Law of attraction**](http://www.thelawofattraction.com/what-is-the-law-of-attraction/) written by Rhonda Byrne in her book [Secret](https://en.wikipedia.org/wiki/The_Secret_(book)).
 It says that we become who we are by what we say and what we read(there is a huge difference between saying '*I will be good guy*' and '*I won't be a bad guy*').
 
-Thus the premise here is that what we read in News has a huge impact on the society, it doesn't matter whether we do it consciously or subconsciously.
+Thus the premise here is the words that we read in the News has a huge impact on the society, it doesn't matter whether we do it consciously or subconsciously.
 
 
 # Hypothesis:
@@ -55,5 +55,12 @@ in the reuters.com front page.
 It is then converted to a structured CSV format.
 ## [Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
 
+The data as CSV file has the following columns:
+
+* `TITLE`: the Title of the article.
+* `SUMMARY`: first few lines of the article's text.
+* `TEXT`: Full text inside the article
+* `URL`: web link to the article.
+* `KEYWORDS`: important words in the article.
 
 [Download original csv file](sample/reuters.csv)
