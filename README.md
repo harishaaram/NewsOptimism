@@ -2,20 +2,22 @@
 Comparative Analysis of various news media articles by quantifying how much of words are positive in the article.
 
 # Problem
-All around the world both good and bad happens, but we get to know only what we are exposed to. That's the responsibility of media. This App answers **How much** the each news media is providing the optimistic news to the society?
+All around the world both good and bad happens, and we get to know only those that are exposed to us. And, that’s the primary responsibility of the media. But the bigger responsibility of these media houses is the way in which they express the content to the people. 
 
-There is a famous concept called [**Law of attraction**](http://www.thelawofattraction.com/what-is-the-law-of-attraction/) written by Rhonda Byrne in her book [Secret](https://en.wikipedia.org/wiki/The_Secret_(book)).
-It says that we become who we are by what we say and what we read(there is a huge difference between saying '*I will be good guy*' and '*I won't be a bad guy*').
+A responsible media house’s content should be original, unbiased, free of exaggeration and should be very sensitive in handling the emotions of it’s readers and viewers. A same story could be told in different ways and these different ways could definitely trigger different emotions among it’s readers.
 
-Thus the premise here is the words that we read in the News has a huge impact on the society, it doesn't matter whether we do it consciously or subconsciously.
+It is known that we become who we are by what we say and what we read. Reading a story that’s filled with positive words would make us feel more positive and vice versa. So the wordings of a content definitely plays an equal role as that of the content itself. 
 
+This project aims to answer how some of the major media houses in USA are giving importance to the wordings of their content. The answer would allow the readers to wisely choose their daily source of news that truly cares about its readers.
+
+There is a famous concept called [**Law of attraction**](http://www.thelawofattraction.com/what-is-the-law-of-attraction/) written by **Rhonda Byrne** in her book [Secret](https://en.wikipedia.org/wiki/The_Secret_(book)).It says that we become who we are by what we say!
 
 # Hypothesis:
 The English language words are considered to find out how much of positivity or negativity it contains. We measure this by comparing the
 frequency of occurrence of the words across various news media.
 
 # Target Audience:
-The headline scrollers - people who scroll the news headlines and summary.
+The headline scrollers - people who scroll the news headlines and text directly from the media's homepage.
 
 # Datasource:
     1. "http://www.nytimes.com/"
@@ -64,3 +66,4 @@ The data as CSV file has the following columns:
 * `KEYWORDS`: important words in the article.
 
 [Download original csv file](sample/reuters.csv)
+
