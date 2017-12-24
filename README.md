@@ -12,6 +12,9 @@ This project aims to answer how some of the major media houses in USA are giving
 
 There is a famous concept called [**Law of attraction**](http://www.thelawofattraction.com/what-is-the-law-of-attraction/) written by **Rhonda Byrne** in her book [Secret](https://en.wikipedia.org/wiki/The_Secret_(book)).It says that we become who we are by what we say!
 
+# Key concepts:
+*Text-analysis,  Lexicon based approach, Data extraction, Newspaper API, Natural Language Processing(NLP), AFINN*
+
 # Hypothesis:
 The English language words are considered to find out how much of positivity or negativity it contains. We measure this by comparing the
 frequency of occurrence of the words across various news media.
@@ -30,7 +33,6 @@ These are the famous news websites considered based on the unique visitor count 
 
 # Language:
     1. Python 3
-    2. R
 
 ## Considerations to keep in mind:
 1. Country considered is ONLY USA.
@@ -54,9 +56,6 @@ Data is collected as Text Document from the datasources as mentioned above. Have
 in the reuters.com front page.
 ![Reuters_10/17/2017](sample/reutersTextSamplefile.png)
 
-It is then converted to a structured CSV format.
-## [Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
-
 The data as CSV file has the following columns:
 
 * `TITLE`: the Title of the article.
@@ -67,3 +66,29 @@ The data as CSV file has the following columns:
 
 [Download original csv file](sample/reuters.csv)
 
+## 2) Analysis Phase:
+
+The sentiment score is based on the sentiment of the terms. Based on this the net articles sentiment is calculated and compared with other media houses.
+
+For eg: An article is taken from the cnn's webpage and its sentiment is calculated. The key words that occur in the article is shown here,
+
+![cnn_12032017](sample/cancer_story.png)
+
+The score range of the y axis for this article is shown below(while the x axis the keywords in the article),
+
+![score range](sample/scoreRange.png)
+
+Now consider the figure below, it shows that the word *inspiration, saved, hero* has higher score while *lost, sick* contributes to negative sentiment.
+
+
+![sentiment scores](sample/posNeg.png)
+
+Net Sentiment of Vocabularies in the article is 41( ie 428 positive terms and -387 negative terms)
+
+
+
+
+
+# Detailed Work
+1. [Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
+2. [Walkthrough for a single article]()
