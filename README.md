@@ -83,12 +83,10 @@ Now consider the figure below, it shows that the word *inspiration, saved, hero*
 
 ![sentiment scores](sample/posNeg.png)
 
-Net Sentiment of Vocabularies in the article is 41( ie 428 positive terms and -387 negative terms)
-
-
+Net Sentiment of Vocabularies in the article is **41( ie 428 positive terms and -387 negative terms)**
 
 
 
 # Detailed Work
-1. [Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)
-2. [Walkthrough for a single article]()
+1. **[Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)**
+2. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
