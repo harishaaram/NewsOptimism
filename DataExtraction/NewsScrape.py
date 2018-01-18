@@ -6,20 +6,20 @@
 import newspaper
 from newspaper import Article, news_pool
 import sys
-import os
+import os, errno
 import time
 import pandas as pd
+import io
+
 
 def newsscraping(url, media_name):
-    os.getcwd()
-
-    os.chdir('/home/harish/PycharmProjects/NewsOptimism/')
 
     ## ddmmyyyy format
-    filename = time.strftime("%d%m%Y")
-    #filename = 'chck3'
-    backupfile= open('Backup/'+ media_name + '/' + filename, 'w')
-    datasetfile = open('dataset/'+ media_name + '/'  + filename, 'w')
+    time_as_fname = time.strftime("%m%d%Y")
+    # print(time_as_fname)
+    #time_as_fname = 'chck3'
+    backupfile= open('Backup/'+ media_name + '/' + time_as_fname, 'w')
+    datasetfile = open('dataset/'+ media_name + '/'  + time_as_fname, 'w')
 
     i = -1
 
@@ -77,29 +77,37 @@ def newsscraping(url, media_name):
             pass
         # print(i)
     # print(list_dict)
-    save_direct_to_csv(list_dict,media_name)
+    save_direct_to_csv(list_dict,media_name, time_as_fname)
     backupfile.close()
     datasetfile.close()
     #Printing Each corresponding article and its value
 
-def save_direct_to_csv(data, media_name):
-    # columns1 = ['TITLE','URL']
-    # headers = ['KEYWORDS','SUMMARY','TEXT','TITLE','URL']
+def save_direct_to_csv(data, media_name, foldername):
     df = pd.DataFrame(data)
-    # df = df.dropna(axis=0, how='any')
-    df = df.dropna()
-    # df = df.drop_duplicates()
+    df = df.dropna(axis=0, how='any')
 
-    import io
     buf = io.StringIO()
     df.to_csv(buf, index=False)  # convert DataFrame to csv
     # print(buf.getvalue())
-    filename = str(media_name)+'.csv'
-    df.to_csv(filename)
+    time_as_fname = str(media_name)+'.csv'
+    path_name = make_folder(foldername) + '/'+ time_as_fname
+    df.to_csv(path_name)
     # print(list_dict)
 
+def make_folder(fold_name):
+    path = '/home/harish/PycharmProjects/NewsOptimism/csvdataset/'+str(fold_name)
+    try:
+        os.makedirs(path)
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            raise
+    return path
+    
+
 def main():
-    os.chdir('/home/harish/PycharmProjects/NewsOptimism')  # change working dir
+    os.getcwd()
+
+    os.chdir('/home/harish/PycharmProjects/NewsOptimism/')
 
     url_list =["https://www.nytimes.com/", "https://www.foxnews.com/", "https://www.reuters.com/", "https://www.cnn.com/", "https://www.huffingtonpost.com/" ]
     # url_list = ["https://www.bbc.com/"]
