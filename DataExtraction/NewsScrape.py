@@ -60,7 +60,7 @@ def newsscraping(url, media_name):
             backupfile.write("\n"+"-TEXT INSIDE ARTICLE-\n")
             backupfile.write(article.text)
 
-            ----------------------------------------------------------
+            #----------------------------------------------------------
 
             #Mapping to Dictionary:
             dictionary={}
@@ -98,7 +98,6 @@ def make_folder(fold_name):
     path = '/home/harish/PycharmProjects/NewsOptimism/csvdataset/'+str(fold_name)
     try:
         os.makedirs(path)
-        print('sdfdsf')
     except OSError as e:
         if e.errno != errno.EEXIST:
             raise
