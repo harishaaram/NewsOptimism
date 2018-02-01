@@ -89,3 +89,7 @@ Net Sentiment of Vocabularies in the article is **41( ie 428 positive terms and 
 
 # Detailed Work
 1. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
+
+# Future directions:
+
+Discerning the Link between the country's overall development and the role news media houses(specific to country) using the above approach. We take three different countries: USA, Singapore, India for the study.
