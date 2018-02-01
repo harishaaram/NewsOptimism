@@ -13,11 +13,11 @@ This project aims to answer how some of the major media houses in USA are giving
 There is a famous concept called [**Law of attraction**](http://www.thelawofattraction.com/what-is-the-law-of-attraction/) written by **Rhonda Byrne** in her book [Secret](https://en.wikipedia.org/wiki/The_Secret_(book)).It says that we become who we are by what we say!
 
 # Key concepts:
-*Text-analysis,  Lexicon based approach, Data extraction, Newspaper API, Natural Language Processing(NLP), AFINN*
+*Text-analysis,  Lexicon based sentiment analysis, Natural Language Processing(NLP),Data extraction, Newspaper API, AFINN*
 
 # Hypothesis:
-The English language words are considered to find out how much of positivity or negativity it contains. We measure this by comparing the
-frequency of occurrence of the words across various news media.
+The English(language) words are considered to find out how much of positivity or negativity an article contains. We then quantify the news website by comparing the
+frequency of occurrence of the words across all articles published in that website.
 
 # Target Audience:
 The headline scrollers - people who scroll the news headlines and text directly from the media's homepage.
@@ -32,7 +32,7 @@ The headline scrollers - people who scroll the news headlines and text directly 
 These are the famous news websites considered based on the unique visitor count obtained from the [research](http://www.journalism.org/files/legacy/NIELSEN%20STUDY%20-%20Copy.pdf)
 
 # Language:
-    1. Python 3
+    1. Python
 
 ## Considerations to keep in mind:
 1. Country considered is ONLY USA.
@@ -41,19 +41,19 @@ These are the famous news websites considered based on the unique visitor count 
 4. Data has been scrapped from the resources at the **same** time(since it gets updated regularly).
 5. Our assumption is there is no bias between choosing articles.
 
-## The Approach
-1. Collect news headlines and summary from all our datasets.
-2. Convert the text document into Term Documen Matrix
-3. Preprocess the data.
+## Approach:
+1. Scrapped news articles and their content from the news media websites as text document.
+2. Converted those text document into csv formatted file.
+3. Preprocessed the data using NLP techniques.
 4. Tf-idf method is applied to find the importance of word.
-5. Sentiment analysis to show of text how much positive or negative for each day.
+5. Sentiment analysis to show how much positive or negative the news websites for each day.
 
 # Progress:
 
 ## 1) Data Extraction Phase:
 
-Data is collected as Text Document from the datasources as mentioned above. Have a look at the text file of the articles
-in the reuters.com front page.
+Data is collected as Text Document from the datasources as mentioned above. Have a look at the sample text file of the articles
+taken from the reuters.com front page on 10/17/2017.
 ![Reuters_10/17/2017](sample/reutersTextSamplefile.png)
 
 The data as CSV file has the following columns:
@@ -64,17 +64,18 @@ The data as CSV file has the following columns:
 * `URL`: web link to the article.
 * `KEYWORDS`: important words in the article.
 
+**[Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)**
 [Download original csv file](sample/reuters.csv)
 
 ## 2) Analysis Phase:
 
-The sentiment score is based on the sentiment of the terms. Based on this the net articles sentiment is calculated and compared with other media houses.
+The sentiment score is based on the sentiment of the terms. Based on this assumption the net articles sentiment is calculated and compared with other media houses.
 
 For eg: An article is taken from the cnn's webpage and its sentiment is calculated. The key words that occur in the article is shown here,
 
 ![cnn_12032017](sample/cancer_story.png)
 
-The score range of the y axis for this article is shown below(while the x axis the keywords in the article),
+The score range of the y axis for this article is shown below(while the x axis are the keywords in the article),
 
 ![score range](sample/scoreRange.png)
 
@@ -86,7 +87,5 @@ Now consider the figure below, it shows that the word *inspiration, saved, hero*
 Net Sentiment of Vocabularies in the article is **41( ie 428 positive terms and -387 negative terms)**
 
 
-
 # Detailed Work
-1. **[Have Peek at the file structure](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/master/Sample_data_peek.ipynb)**
-2. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
+1. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
