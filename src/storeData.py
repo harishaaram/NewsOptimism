@@ -1,69 +1,47 @@
-import sqlite3
-import os
+import json
+
+from io import BytesIO
+from zipfile import ZipFile
+from urllib.request import urlopen
+
+
+# Download the AFINN lexicon, unzip, and read the latest word list in AFINN-111.txt
+url = urlopen('http://www2.compute.dtu.dk/~faan/data/AFINN.zip')
+zipfile = ZipFile(BytesIO(url.read()))
+afinn_file = zipfile.open('AFINN/AFINN-111.txt')
+
+afinn = dict()
+
+for line in afinn_file:
+    parts = line.strip().split()
+    if len(parts) == 2:
+        afinn[parts[0].decode("utf-8")] = int(parts[1])
+
+
+def afinn_sentiment(terms, afinn, data):
+    total = 0
+    total_neg = 0
+    total_pos = 0
+    ls = []
+    for t in terms:
+        if t in afinn:
+            ls.append(t)
+            total += afinn[t]
+            if afinn[t] > 0:
+                data['pos'].append(t)
+                total_pos += afinn[t]
+            else:
+                data['neg'].append(t)
+                total_neg += afinn[t]
+    return (total, total_pos, total_neg)
 
 
 
-def create_connection(db_file):
-    """ create a database connection to the SQLite database
-        specified by db_file
-    :param db_file: database file
-    :return: Connection object or None
-    """
-    try:
-        conn = sqlite3.connect(db_file)
-        return conn
-    except sqlite3.Error as e:
-        print(e)
+def json_storage(allWords):
+    data = {}
+    data['pos'] = []
+    data['neg'] = []
+    data['NetOutcome'], data['posCount'],data['negCount'] = afinn_sentiment(allWords, afinn, data)
 
-    return None
-
-
-def create_table(conn, create_table_sql):
-    """ create a table from the create_table_sql statement
-    :param conn: Connection object
-    :param create_table_sql: a CREATE TABLE statement
-    :return:
-    """
-    try:
-        c = conn.cursor()
-        c.execute(create_table_sql)
-    except sqlite3.Error as e:
-        print(e)
-
-
-def main():
-    database = "SQL_DB"
-
-    sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS RawDataDB (
-                                        MonthDate PRIMARY KEY,
-                                        cnn text,
-                                        foxnews text,
-                                        huffPost text,
-                                        nytimes text,
-                                        reuters text
-                                    ); """
-
-    # sql_create_tasks_table = """CREATE TABLE IF NOT EXISTS ProcessedDataDB (
-    #                                 id integer PRIMARY KEY,
-    #                                 name text NOT NULL,
-    #                                 priority integer,
-    #                                 status_id integer NOT NULL,
-    #                                 project_id integer NOT NULL,
-    #                                 begin_date text NOT NULL,
-    #                                 end_date text NOT NULL,
-    #                                 FOREIGN KEY (project_id) REFERENCES projects (id)
-    #                             );"""
-
-    # create a database connection
-    conn = create_connection(database)
-    if conn is not None:
-        # create projects table
-        create_table(conn, sql_create_projects_table)
-        # create tasks table
-        # create_table(conn, sql_create_tasks_table)
-    else:
-        print("Error! cannot create the database connection.")
-
-
-if __name__ == '__main__':
-    main()
+    with open("d2.json", 'w') as out:
+        json.dump(data, out)
