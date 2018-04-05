@@ -1,5 +1,5 @@
 import DataPreperation as dp
-from storeData import *
+import storeData as sd
 import shutil as SH
 
 import os
@@ -22,7 +22,8 @@ def main():
         #     print(os.path.join(root, name))
 
     for l in ls:
-        print(dp.collectWords_perNewsMedia(l))
+        All_Words_article = dp.collectWords_perNewsMedia(l)
+        sd.json_storage(All_Words_article)
         break
 
 if __name__ == '__main__':
