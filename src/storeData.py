@@ -37,11 +37,14 @@ def afinn_sentiment(terms, afinn, data):
 
 
 
-def json_storage(allWords):
+def json_storage(allWords, file_dir, date_val):
     data = {}
+    data['Date'] = date_val
     data['pos'] = []
     data['neg'] = []
     data['NetOutcome'], data['posCount'],data['negCount'] = afinn_sentiment(allWords, afinn, data)
 
-    with open("d2.json", 'w') as out:
+
+
+    with open(file_dir, 'w') as out:
         json.dump(data, out)
