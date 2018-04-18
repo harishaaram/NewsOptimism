@@ -35,11 +35,16 @@ These are the famous news websites considered based on the unique visitor count 
     1. Python
 
 ## Considerations to keep in mind:
-1. Country considered is ONLY USA.
+1. The Linguistic choice of English words plays a key role in reader’s emotions.
 2. Data is extracted from the FRONT page of the above data sources.
 3. The article title and the summary are extracted.
 4. Data has been scrapped from the resources at the **same** time(since it gets updated regularly).
 5. Our assumption is there is no bias between choosing articles.
+6. Our target audience are prone to ALL the articles published in the home page.
+7. Only the USA News web market is considered for this research.
+8. CNN, Foxnews, nytimes, huffingtonpost, reuters are the top news websites considered based on the unique visitor count obtained from the research.
+9. Our Sample considers only the articles published in these websites at 10am(CST).
+
 
 ## Approach:
 1. Scrapped news articles and their content from the news media websites as text document.
@@ -69,23 +74,30 @@ The data as CSV file has the following columns:
 
 ## 2) Analysis Phase:
 
-The sentiment score is based on the sentiment of the terms. Based on this assumption the net articles sentiment is calculated and compared with other media houses.
+Let’s check the distribution of negative words(words that have a negative connotation), as shown below. The media house with least projection of these negative words is Foxnews followed by New York times. They deliver the content in more optimistic way than their counterparts.
 
-For eg: An article is taken from the cnn's webpage and its sentiment is calculated. The key words that occur in the article is shown here,
-
-![cnn_12032017](sample/cancer_story.png)
-
-The score range of the y axis for this article is shown below(while the x axis are the keywords in the article),
-
-![score range](sample/scoreRange.png)
-
-Now consider the figure below, it shows that the word *inspiration, saved, hero* has higher score while *lost, sick* contributes to negative sentiment.
+*Net Negative Score=Negative termsper media * Sentiment score*
 
 
-![sentiment scores](sample/posNeg.png)
+![cnn_12032017](sample/neg_word.gif)
 
-Net Sentiment of Vocabularies in the article is **41( ie 428 positive terms and -387 negative terms)**
+However to build healthy society we also need to check all vocabulary content of the article, that includes both the usage of positive and negative words. Thus a Normalized score is introduced!
 
+A Normalized score is the net sentiment score of all articles to that of the total number of term usage across all the articles in a day(which is specific to each media houses). 
+
+*Net Normalized Score=(termsper day * Sentiment score)/Total Number of terms*
+
+
+![score range](sample/norm_score.gif)
+*Note: The terms positivines is calculated using a lexicon based approach, AFINN(It is a list of English words rated for valence with an integer between minus five (negative) and plus five (positive)).*
+
+Conclusion:
+Thus from the plot we can see that New York times plays an important role in not only conveying the News but also in a healthy way. Thus I recommend the Web users to go for **New york times** to get their daily news. 
+
+
+
+*Closing Remarks:
+There is a famous concept called Law of attraction written by Rhonda Byrne in her book Secret.It says that we become who we are by what we say! This has been one of the motive for this research to happen*
 
 # Detailed Work
 1. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
