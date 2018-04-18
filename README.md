@@ -36,15 +36,11 @@ These are the famous news websites considered based on the unique visitor count 
     2. Sql
 
 ## Considerations to keep in mind:
-1. The Linguistic choice of English words plays a key role in reader’s emotions.
-2. Data is extracted from the FRONT page of the above data sources.
-3. The article title and the summary are extracted.
-4. Data has been scrapped from the resources at the **same** time(since it gets updated regularly).
-5. Our assumption is there is no bias between choosing articles.
-6. Our target audience are prone to ALL the articles published in the home page.
-7. Only the USA News web market is considered for this research.
-8. CNN, Foxnews, nytimes, huffingtonpost, reuters are the top news websites considered based on the unique visitor count obtained from the research.
-9. Our Sample considers only the articles published in these websites at 10am(CST).
+1. The Language/ Linguistic nature of English words play an important role in defining what kind of society it builds.
+2. Only the USA News web market is considered for this research.
+3. CNN, Foxnews, nytimes, huffingtonpost, reuters are the top news websites considered based on the unique visitor count obtained from the research[www.journalism.org/files/legacy/NIELSEN%20STUDY%20-%20Copy.pdf].
+4. Our target audience are prone to ALL the articles published in home page.
+5. Our Sample considers only the articles published in 10am(CST).
 
 
 ## Approach:
@@ -93,18 +89,16 @@ A Normalized score is the net sentiment score of all articles to that of the tot
 
 *Note: The terms positivines is calculated using a lexicon based approach, AFINN(It is a list of English words rated for valence with an integer between minus five (negative) and plus five (positive)).*
 
-Conclusion:
-Thus from the plot we can see that New York times plays an important role in not only conveying the News but also in a healthy way. Thus I recommend the Web users to go for **New york times** to get their daily news. 
+## 3) Conclusion:
+Thus from the plot we can see that New York times plays an important role in not only conveying the News but also in a healthy way(comparatively more optimistic). Thus I recommend **New york times**, for those Web users who just want to have good taste of daily news.
 
-
-
-*Closing Remarks:
-There is a famous concept called Law of attraction written by Rhonda Byrne in her book Secret.It says that we become who we are by what we say! This has been one of the motive for this research to happen*
 
 # Detailed Work
 1. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
 1. **[Full Project OpenSource code](https://github.com/harishaaram/NewsOptimism/tree/master/src)**
 
-# Future directions:
-
-Discerning the Link between the country's overall development and the role news media houses(specific to country) using the above approach. We take three different countries: USA, Singapore, India for the study.
+# Detailed Research resources:
+1. [How the words we use affect the way we think](https://tedxinnovations.ted.com/2015/04/10/spotlight-tedx-talk-how-the-words-we-use-affect-the-way-we-think/) 
+2. [According to new research by Stanford psychologists. Your thinking can even be swayed with just one word, they say](https://news.stanford.edu/news/2011/february/metaphors-crime-study-022311.html)
+3. There is a famous concept called Law of attraction written by Rhonda Byrne in her book [Secret](https://en.wikipedia.org/wiki/The_Secret_(book)).It says that we become who we are by what we say!
+3. [Lera Boroditsky: How language shapes the way we think](https://www.ted.com/talks/lera_boroditsky_how_language_shapes_the_way_we_think#t-840579)
