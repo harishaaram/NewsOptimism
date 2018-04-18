@@ -1,5 +1,5 @@
 # NewsOptimism
-Comparative Analysis of various news media articles by quantifying how much of words are positive in the article.
+Comparative Analysis of various news media and quantify its postiveness based on the Linguistic choice of words in their articles.
 
 # Problem
 All around the world both good and bad happens, and we get to know only those that are exposed to us. And, that’s the primary responsibility of the media. But the bigger responsibility of these media houses is the way in which they express the content to the people. 
@@ -8,7 +8,7 @@ A responsible media house’s content should be original, unbiased, free of exag
 
 It is known that we become who we are by what we say and what we read. Reading a story that’s filled with positive words would make us feel more positive and vice versa. So the wordings of a content definitely plays an equal role as that of the content itself. 
 
-This project aims to answer how some of the major media houses in USA are giving importance to the wordings of their content. The answer would allow the readers to wisely choose their daily source of news that truly cares about its readers.
+This project aims to answer how some of the major media houses in USA are giving importance to the **wordings of their content**. The answer would allow the readers to wisely choose their daily source of news that truly cares about its readers.
 
 There is a famous concept called [**Law of attraction**](http://www.thelawofattraction.com/what-is-the-law-of-attraction/) written by **Rhonda Byrne** in her book [Secret](https://en.wikipedia.org/wiki/The_Secret_(book)).It says that we become who we are by what we say!
 
@@ -33,6 +33,7 @@ These are the famous news websites considered based on the unique visitor count 
 
 # Language:
     1. Python
+    2. Sql
 
 ## Considerations to keep in mind:
 1. The Linguistic choice of English words plays a key role in reader’s emotions.
@@ -89,6 +90,7 @@ A Normalized score is the net sentiment score of all articles to that of the tot
 
 
 ![score range](sample/norm_score.gif)
+
 *Note: The terms positivines is calculated using a lexicon based approach, AFINN(It is a list of English words rated for valence with an integer between minus five (negative) and plus five (positive)).*
 
 Conclusion:
@@ -101,6 +103,7 @@ There is a famous concept called Law of attraction written by Rhonda Byrne in he
 
 # Detailed Work
 1. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
+1. **[Full Project OpenSource code](https://github.com/harishaaram/NewsOptimism/tree/master/src)**
 
 # Future directions:
 
