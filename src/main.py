@@ -3,7 +3,6 @@ import storeData as sd
 
 import os
 yourpath = '/home/harish/PycharmProjects/NewsOptimism/dataset/Nov2017'
-
 json_data_dir = '/home/harish/PycharmProjects/NewsOptimism/json_data'
 
 
@@ -24,7 +23,7 @@ def main():
         file_name = date_val + ".json"
         file_dir = os.path.join(json_data_dir,fname[-1], file_name)
 
-
+        #only do the processing if it didnt exist
         if not os.path.isfile(file_dir):
             All_Words_article = dp.collectWords_perNewsMedia(l)
             sd.json_storage(All_Words_article, file_dir,date_val)

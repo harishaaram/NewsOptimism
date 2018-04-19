@@ -14,7 +14,13 @@ nltk.download('maxent_ne_chunker') # downloads the maximum entropy chunker that 
 
 
 def collectWords_perNewsMedia(csv_link):
-    # Testing with single text:
+    """
+    Collect all the text articles from path file csv_link and returns the preprocessed dictionaried words
+     Params:
+       csv_link...link to the .csv file
+     Returns:
+       Words_perday...list of words after preprocessing
+     """
     df = pd.read_csv(csv_link)
     df = df.dropna(how='any')
 
