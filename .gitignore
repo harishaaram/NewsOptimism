@@ -2,3 +2,9 @@ Backup/
 dataset/
 pictures/
 .idea/
+_config.yml
+secrets/
+json_data/
+.ipynb_checkpoints
+All_Files.ipynb
+.idea/
