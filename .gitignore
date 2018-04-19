@@ -5,6 +5,10 @@ pictures/
 _config.yml
 secrets/
 json_data/
-.ipynb_checkpoints
+.ipynb_checkpoints/
 All_Files.ipynb
+wordcloud/
+DataExtraction/
+.Rhistory
+r_script_wordcloud.R
 .idea/
