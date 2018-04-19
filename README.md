@@ -36,7 +36,7 @@ These are the famous news websites considered based on the unique visitor count 
     2. Sql
 
 ## Considerations to keep in mind:
-1. The Language/ Linguistic nature of English words play an important role in defining what kind of society it builds.
+1. Data has been scrapped from the resources at the same time(since it gets updated regularly). 
 2. Only the USA News web market is considered for this research.
 3. CNN, Foxnews, nytimes, huffingtonpost, reuters are the top news websites considered based on the unique visitor count obtained from the research[www.journalism.org/files/legacy/NIELSEN%20STUDY%20-%20Copy.pdf].
 4. Our target audience are prone to ALL the articles published in home page.
