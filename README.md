@@ -94,7 +94,6 @@ Thus from the plot we can see that New York times plays an important role in not
 
 
 # Detailed Work
-1. **[Walkthrough for a single article](http://nbviewer.jupyter.org/github/harishaaram/NewsOptimism/blob/gh-pages/Data_Analysis.ipynb)**
 1. **[Full Project OpenSource code](https://github.com/harishaaram/NewsOptimism/tree/master/src)**
 
 # Detailed Research resources:
