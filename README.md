@@ -95,6 +95,7 @@ Thus from the plot we can see that New York times plays an important role in not
 
 # Detailed Work
 1. **[Full Project OpenSource code](https://github.com/harishaaram/NewsOptimism/tree/master/src)**
+2. **[Access to the Dataset](https://www.kaggle.com/harishcscode/datasets)**
 
 # Detailed Research resources:
 1. [How the words we use affect the way we think](https://tedxinnovations.ted.com/2015/04/10/spotlight-tedx-talk-how-the-words-we-use-affect-the-way-we-think/) 
